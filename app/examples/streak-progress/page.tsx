@@ -2,12 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import StreakStatCard from '@/components/ui/StreakStatCard';
-import StreakStatCardVertical from '@/components/ui/StreakStatCardVertical';
 import StreakProgressBarVertical from '@/components/ui/StreakProgressBarVertical';
-import StreakCard from '@/components/ui/composite/stats/StreakCard';
-import StreakCardVertical from '@/components/ui/composite/stats/StreakCardVertical';
-import StreakCard2 from '@/components/ui/composite/stats/StreakCard2';
 import { Zap, Trophy, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -44,9 +39,9 @@ export default function StreakProgressExample() {
           <ArrowLeft className="h-4 w-4 mr-1" />
           <span>Volver al Dashboard</span>
         </Link>
-        <h1 className="text-2xl font-bold mb-2">Ejemplos de Tarjeta de Racha</h1>
+        <h1 className="text-2xl font-bold mb-2">Ejemplos de Progreso de Racha</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          Este componente muestra la racha actual, el récord histórico y el progreso hacia un nuevo récord.
+          Este componente muestra el progreso de las rachas de forma vertical.
         </p>
       </div>
       
@@ -101,53 +96,6 @@ export default function StreakProgressExample() {
               </button>
             </div>
           </div>
-        </div>
-        
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow">
-          <h2 className="text-xl font-semibold mb-4">Tarjeta de Racha con Progreso</h2>
-          <StreakCard2 
-            currentStreak={currentStreak} 
-            recordStreak={recordStreak}
-            isActive={isActive}
-          />
-        </div>
-      </div>
-      
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow">
-          <h2 className="text-xl font-semibold mb-4">Tarjeta Horizontal</h2>
-          <StreakStatCard
-            title={t('habitDetail.currentStreak', 'Racha actual')}
-            currentStreak={currentStreak}
-            recordStreak={recordStreak}
-            icon={<Zap className="h-4 w-4 text-yellow-500" />}
-          />
-        </div>
-        
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow">
-          <h2 className="text-xl font-semibold mb-4">Tarjeta Vertical</h2>
-          <StreakStatCardVertical
-            title={t('habitDetail.currentStreak', 'Racha actual')}
-            currentStreak={currentStreak}
-            recordStreak={recordStreak}
-            icon={<Zap className="h-4 w-4 text-yellow-500" />}
-          />
-        </div>
-        
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow">
-          <h2 className="text-xl font-semibold mb-4">Tarjeta Simple</h2>
-          <StreakCard
-            currentStreak={currentStreak}
-            recordStreak={recordStreak}
-          />
-        </div>
-        
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow">
-          <h2 className="text-xl font-semibold mb-4">Tarjeta Vertical Simple</h2>
-          <StreakCardVertical
-            currentStreak={currentStreak}
-            recordStreak={recordStreak}
-          />
         </div>
       </div>
       
