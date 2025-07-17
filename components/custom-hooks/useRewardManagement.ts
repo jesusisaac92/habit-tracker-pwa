@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Reward, MedalType } from '@/components/types/types';
-import { useToast } from '@/components/ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 
 const INITIAL_REWARDS: Reward[] = [
   { name: 'Película en el cine', points: 20, classification: 'bronce', index: 0 },
@@ -9,7 +9,6 @@ const INITIAL_REWARDS: Reward[] = [
 ];
 
 export const useRewardManagement = () => {
-  const { toast } = useToast();
   const [rewards, setRewards] = useState<Reward[]>(INITIAL_REWARDS);
   const [totalPoints, setTotalPoints] = useState(0);
   const [claimedMedals, setClaimedMedals] = useState<Record<MedalType, number>>({
@@ -43,10 +42,10 @@ export const useRewardManagement = () => {
       }
     ]);
 
-    toast({
-      title: `Nueva recompensa añadida: ${rewardData.name}`,
-      description: `${points} puntos (${rewardData.classification})`
-    });
+    toast.title(
+      `Nueva recompensa añadida: ${rewardData.name}`,
+      `${points} puntos (${rewardData.classification})`
+    );
   }, [toast]);
 
   const claimReward = useCallback((rewardIndex: number) => {
@@ -59,10 +58,9 @@ export const useRewardManagement = () => {
         [reward.classification]: prev[reward.classification] + 1
       }));
 
-      toast({
-        title: `¡Recompensa reclamada!`,
-        description: `Has canjeado "${reward.name}"`
-      });
+      toast.success(
+        `¡Recompensa reclamada! Has canjeado "${reward.name}"`
+      );
     }
   }, [rewards, totalPoints, toast]);
 

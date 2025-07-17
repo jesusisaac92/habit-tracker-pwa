@@ -19,7 +19,7 @@ export const TaskContainer = ({ task, ...props }: { task: Task } & React.HTMLPro
   const { t } = useTranslation();
   const { labels } = useTaskLabels();
   
-  const taskLabel = labels.find((label: TaskLabel) => label.id === task.label);
+  const taskLabel = labels.find((label: TaskLabel) => label.id === (task.label_id || task.label?.id));
 
   return (
     <div

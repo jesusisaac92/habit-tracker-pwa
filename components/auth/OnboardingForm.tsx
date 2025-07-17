@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { supabase } from '@/src/supabase/config/client';
 import { useTranslation } from 'react-i18next';
 
-export const OnboardingForm = ({ user, onComplete }) => {
+interface OnboardingFormProps {
+  user: any;
+  onComplete: () => void;
+}
+
+export const OnboardingForm = ({ user, onComplete }: OnboardingFormProps) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
@@ -12,9 +17,9 @@ export const OnboardingForm = ({ user, onComplete }) => {
     country: ''
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
@@ -83,7 +88,7 @@ export const OnboardingForm = ({ user, onComplete }) => {
       
     } catch (err) {
       console.error('Error updating profile:', err);
-      setError(err.message);
+      setError(err instanceof Error ? err.message : 'Error desconocido');
     } finally {
       setLoading(false);
     }

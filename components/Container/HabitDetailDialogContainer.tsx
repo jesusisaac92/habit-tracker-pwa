@@ -7,7 +7,7 @@ interface HabitDetailDialogContainerProps {
     initialIsOpen: boolean;
     selectedHabit: HabitWithPerformance | null;
     onClose: () => void;
-    generateGraphData: (habitIndex: number, type?: 'monthly' | 'annual') => void;
+    generateGraphData: (habitIndex: number, type?: 'monthly' | 'annual') => any[];
 }
 
 export const HabitDetailDialogContainer: React.FC<HabitDetailDialogContainerProps> = ({

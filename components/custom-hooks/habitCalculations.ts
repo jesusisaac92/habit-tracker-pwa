@@ -19,7 +19,7 @@ export interface Habit {
 }
 
 export interface HabitStatus {
-  status: string;
+  status: "" | "completed" | "pending";
   timestamp: string;
 }
 

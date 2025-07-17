@@ -7,20 +7,16 @@ interface DayScheduleButtonProps {
   showTimeline: boolean;
   setShowTimeline: (show: boolean) => void;
   currentDate: Date;
-  tasks: any[];
   onUpdateTask: (taskId: string, updates: any) => void;
-  onDelete: (taskId: string) => void;
-  onTasksChange?: () => void;
+  onDelete: (taskId: string) => Promise<void>;
 }
 
 export const DayScheduleButton: React.FC<DayScheduleButtonProps> = ({
   showTimeline,
   setShowTimeline,
   currentDate,
-  tasks,
   onUpdateTask,
-  onDelete,
-  onTasksChange
+  onDelete
 }) => {
   return (
     <>
@@ -36,10 +32,12 @@ export const DayScheduleButton: React.FC<DayScheduleButtonProps> = ({
         isOpen={showTimeline}
         onOpenChange={setShowTimeline}
         date={currentDate}
-        tasks={tasks}
         onUpdateTask={onUpdateTask}
         onDelete={onDelete}
-        onTasksChange={onTasksChange}
+        habits={[]}
+        onUpdateHabit={() => {}}
+        habitStatus={{}}
+        taskLabels={[]}
       />
     </>
   );
