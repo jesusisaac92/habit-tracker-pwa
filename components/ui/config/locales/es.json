@@ -1,0 +1,8 @@
+{
+  "profile": {
+    "updateSuccess": "Perfil actualizado",
+    "updateSuccessMessage": "Tu perfil ha sido actualizado correctamente",
+    "updateError": "Error al actualizar",
+    "updateErrorMessage": "No se pudo actualizar el perfil. Inténtalo de nuevo."
+  }
+} 

@@ -1,0 +1,18 @@
+{
+  "dialogs": {
+    "annualProgress": {
+      "description": "Gráfico que muestra el progreso anual de los hábitos"
+    }
+  },
+  "stats": {
+    "summary": "Resumen estadístico",
+    "average": "Promedio",
+    "maximum": "Máximo",
+    "maxDate": "Fecha máx.",
+    "maxMonth": "Mes máx.",
+    "trend": "Tendencia",
+    "improving": "Mejorando",
+    "declining": "Declinando",
+    "stable": "Estable"
+  }
+} 
