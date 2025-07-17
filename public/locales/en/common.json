@@ -1,0 +1,778 @@
+{
+  "settings": {
+    "title": "Settings",
+    "general": "General",
+    "appearance": "Appearance",
+    "language": "Language",
+    "theme": {
+      "title": "Theme",
+      "darkMode": "Dark mode",
+      "lightMode": "Light mode",
+      "darkDescription": {
+        "line1": "Use dark theme",
+        "line2": "to reduce brightness"
+      },
+      "lightDescription": {
+        "line1": "Use light theme",
+        "line2": "for better visibility"
+      }
+    },
+    "autoSave": "Auto Save",
+    "analytics": "Analytics",
+    "help": "Help",
+    "close": "Close",
+    "feedback": "Feedback",
+    "description": "Adjust your application preferences",
+    "languageDescription": "Select the application language",
+    "themeDescription": "Customize the application appearance",
+    "moreSettings": {
+      "title": "More settings",
+      "show": "Show more settings",
+      "hide": "Hide settings"
+    },
+    "habitList": {
+      "title": "Habit list settings",
+      "description": "Customize how your habits are displayed and sorted",
+      "showCompleted": "Show completed habits",
+      "showCompletedDescription": "Keep habits visible after completing them",
+      "sortOptions": {
+        "title": "Sort habits",
+        "description": "Choose how you want to sort your habits",
+        "byTime": "By time",
+        "byName": "By name (A-Z)",
+        "byCreationDate": "By creation date"
+      }
+    },
+    "blockFutureDates": "Block future dates",
+    "blockFutureDatesDescription": "Prevent marking habits as completed on future dates",
+    "languageChanged": "Language changed",
+    "languageChangedDescription": "The language has been updated successfully",
+    "unlockFutureDates": "Unlock future dates",
+    "unlockFutureDatesDescription": "Allow marking habits on future dates. By default, habits can only be marked on the current day or past days.",
+    "timeFormat": {
+      "title": "12-hour format",
+      "description": "Switch between 24-hour and 12-hour (AM/PM) time format"
+    }
+  },
+  "languages": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "app": {
+    "title": "Habit Tracker",
+    "loading": "Loading...",
+    "footer": "All rights reserved"
+  },
+  "navigation": {
+    "habits": "Habits",
+    "rewards": "Medals",
+    "performance": "Performance",
+    "profile": "Profile",
+    "tasks": "Tasks",
+    "distribution": "Distribution",
+    "settings": "Settings"
+  },
+  "habits": {
+    "title": "Habit Calendar",
+    "add": "Add Habit",
+    "edit": "Edit Habit",
+    "delete": "Delete Habit",
+    "name": "Habit Name",
+    "description": "Add habit description",
+    "time": "Time",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "status": {
+      "completed": "Completed",
+      "partial": "Partial",
+      "notCompleted": "Not Completed"
+    },
+    "noSpecificTime": "No specific time",
+    "streak": "Current streak: {{count}} days",
+    "record": "Record: {{count}} days",
+    "calendar": {
+      "title": "Habit Calendar",
+      "previous": "Previous day",
+      "next": "Next day"
+    },
+    "actions": {
+      "graph": "Graph",
+      "edit": "Edit",
+      "calendar": "Calendar",
+      "delete": "Delete"
+    },
+    "dateRange": "Date range",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "repeatOn": "Repeat on",
+    "frequency": "Frequency",
+    "days": {
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S",
+      "sunday": "S"
+    },
+    "indefinite": "No limit",
+    "selectDays": "Select repetition days",
+    "search": "Search habits...",
+    "completionMessages": {
+      "title": "Great job!",
+      "message": "You've completed all your habits for today. Keep it up! Every small step brings you closer to your goals."
+    },
+    "noHabits": {
+      "title": "No habits added yet",
+      "message": "Start by adding your first habit by clicking the '+' button in the top bar!"
+    },
+    "colorPicker": {
+      "label": "Select color",
+      "selected": "Color selected",
+      "required": "Please select a color for the habit",
+      "showCustom": "Customize color",
+      "hideCustom": "Hide color picker",
+      "customColor": "or choose a custom color"
+    },
+    "noHabitsForDate": {
+      "title": "No scheduled habits",
+      "message": "There are no habits scheduled for this date. Scheduled habits will appear here when they are within their date range."
+    },
+    "selectTime": "Select time",
+    "addHabit": "Add Habit",
+    "menu": {
+      "viewGraph": "View graph",
+      "viewCalendar": "View calendar",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "deleteDialog": {
+      "title": "Are you sure?",
+      "description": "This action cannot be undone. The habit \"{{habitName}}\" and all its history will be permanently deleted.",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "steps": {
+      "basicInfo": {
+        "title": "Basic Information",
+        "description": "Name and details of the habit"
+      },
+      "schedule": {
+        "title": "Schedule",
+        "description": "Configure when you want to perform this habit"
+      },
+      "customize": {
+        "title": "Customize",
+        "description": "Customize the appearance of your habit"
+      }
+    },
+    "navigation": {
+      "previous": "Back",
+      "next": "Next",
+      "finish": "Finish"
+    },
+    "form": {
+      "name": "Habit name",
+      "description": "Description",
+      "difficulty": "Difficulty",
+      "selectDifficulty": "Select difficulty",
+      "noSpecificTime": "No specific time",
+      "selectTime": "Select time",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "indefinite": "No end date",
+      "selectColor": "Select color",
+      "selectIcon": "Select icon"
+    },
+    "iconPicker": {
+      "label": "Habit icon",
+      "select": "Select icon",
+      "selected": "Icon selected"
+    },
+    "completed": "Completed",
+    "notCompleted": "Not completed"
+  },
+  "rewards": {
+    "title": "Rewards",
+    "add": "Add Reward",
+    "points": "Points: {{count}}",
+    "claim": "Claim",
+    "classifications": {
+      "bronce": "Bronze",
+      "plata": "Silver",
+      "oro": "Gold"
+    },
+    "availableRewards": "Available Rewards",
+    "totalPoints": "Total points",
+    "pointsNeeded": "Points needed",
+    "accumulatedPoints": "Accumulated points",
+    "viewDetails": "View details"
+  },
+  "notes": {
+    "add": "Add note",
+    "edit": "Edit note",
+    "delete": "Delete Note",
+    "placeholder": "Write your note here..."
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "help": "Help"
+  },
+  "messages": {
+    "habitAdded": "Habit added successfully",
+    "habitUpdated": "Habit updated successfully",
+    "habitDeleted": "Habit deleted successfully",
+    "rewardClaimed": "Reward claimed!",
+    "confirmDelete": "Are you sure you want to delete this?"
+  },
+  "performance": {
+    "title": "Performance",
+    "overview": "Overview",
+    "searchHabits": "Search habits...",
+    "habitPerformance": "Performance",
+    "medalsSummary": "Medals Summary",
+    "generalBalance": "General Balance",
+    "viewDetailedBalance": "View Detailed Balance",
+    "viewProgressTrends": "View Progress Trends",
+    "completionRate": "Completion rate",
+    "view": "View",
+    "graphTitle": "Performance Graph",
+    "tooltip": {
+      "title": "Performance Visualization",
+      "description": "The graph shows the performance pattern:",
+      "point1": "Allows you to visualize your day-to-day progress",
+      "point2": "Helps identify performance patterns"
+    },
+    "noData": "No data available",
+    "progressTrends": "Progress Trends",
+    "selectPeriod": "Select Period",
+    "periods": {
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "noHabits": "Start adding habits to see your performance",
+    "noResults": "No results found for your search",
+    "viewDetails": "View details",
+    "viewPerformance": "View performance",
+    "trend": "Trend {{year}}",
+    "noHabitsTitle": "No progress to show",
+    "noHabitsDescription": "Create your first habit to start seeing your progress in this chart.",
+    "noDataTitle": "No data to display",
+    "noDataDescription": "Complete your habits to see data in this chart."
+  },
+  "profile": {
+    "title": "Profile",
+    "updateProfile": "Update Profile",
+    "updateTitle": "Update Profile",
+    "updateDescription": "Update your personal information",
+    "updateButton": "Update",
+    "name": "Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "changePhoto": "Change photo",
+    "avatarAlt": "User avatar",
+    "signOut": "Sign Out",
+    "fields": {
+      "age": "Age",
+      "birthDate": "Date of Birth",
+      "country": "Country",
+      "memberSince": "Member Since",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    },
+    "values": {
+      "years": "{{age}} years"
+    },
+    "gender": {
+      "label": "Gender",
+      "select": "Select gender",
+      "male": "Male",
+      "female": "Female",
+      "preferNotToSay": "Prefer not to say",
+      "noEspecificado": "Not specified"
+    },
+    "placeholders": {
+      "name": "Enter your name",
+      "lastName": "Enter your last name",
+      "email": "Enter your email",
+      "birthDate": "Select your date of birth",
+      "gender": "Select your gender",
+      "country": "Enter your country"
+    },
+    "createTitle": "Complete your profile",
+    "createDescription": "To personalize your experience, we need some additional information",
+    "createButton": "Complete profile"
+  },
+  "menu": {
+    "title": "Menu",
+    "close": "Close menu",
+    "habits": "Habits",
+    "rewards": "Rewards",
+    "performance": "Performance",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "tasks": "Tasks",
+    "distribution": "Distribution"
+  },
+  "viewNote": {
+    "title": "View Note",
+    "editButton": "Edit Note"
+  },
+  "progressChart": {
+    "title": "Progress towards Reward",
+    "selectReward": "Select a reward to view progress",
+    "tooltip": {
+      "title": "Points Calculation",
+      "description": "The chart shows the breakdown of points per habit:",
+      "point1": "Each completed habit adds points",
+      "point2": "Points accumulate per period",
+      "point3": "The total determines available rewards",
+      "example": {
+        "title": "Example:",
+        "description": "If a habit is worth 2 points and you complete it 3 times:",
+        "calculation": "3 × 2 points = 6 total points"
+      }
+    }
+  },
+  "common": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "optional": "optional",
+    "manage": "Manage",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "of": "of",
+    "back": "Back",
+    "next": "Next",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add"
+  },
+  "objective": {
+    "newTitle": "Set New Objective",
+    "description": "Define a new time goal for your habit",
+    "daysLabel": "New time goal (days)",
+    "setButton": "Set New Objective"
+  },
+  "help": {
+    "title": "Send Feedback",
+    "description": "Share your questions or suggestions",
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your email",
+      "commentPlaceholder": "Your comment or question",
+      "submitButton": "Submit"
+    }
+  },
+  "habitPieChart": {
+    "title": "Habit Status Distribution",
+    "status": {
+      "completed": "Completed",
+      "partial": "Partial",
+      "notCompleted": "Not Completed"
+    },
+    "tooltip": {
+      "description": "This chart shows the percentage distribution of your habit states:",
+      "completed": "Completed: Days where you completed the habit",
+      "partial": "Partial: Days where you partially completed it",
+      "notCompleted": "Not completed: Days where it wasn't done"
+    }
+  },
+  "habitPerformance": {
+    "title": "Habit Performance",
+    "completionRate": "Completion Rate",
+    "consistencyRate": "Consistency Rate",
+    "completed": "Completed",
+    "partial": "Partial",
+    "notCompleted": "Not Completed",
+    "record": "Record",
+    "days": "days",
+    "timeObjective": "Time Objective",
+    "viewDetailedGraph": "View Detailed Graph"
+  },
+  "habitDetail": {
+    "srDescription": "Selected habit details, including completion and consistency rates, record, current streak, time objective, and start date.",
+    "completionRate": "Completion Rate",
+    "consistencyRate": "Consistency Rate",
+    "record": "Record",
+    "currentStreak": "Current Streak",
+    "timeObjective": "Objective",
+    "startDate": "Start Date",
+    "daysValue": "{{days}} days",
+    "performanceTitle": "Annual Performance",
+    "visualize": "Visualize",
+    "timeProgress": "Time Progress",
+    "daysLeft": "{{days}} days left",
+    "completed": "Completed",
+    "annualPerformance": "Annual Performance"
+  },
+  "habitCompleted": {
+    "title": "Congratulations!",
+    "message": "You have completed your {{days}}-day goal of \"{{habitName}}\".",
+    "question": "Your consistency is making a difference. Would you like to continue improving this habit?",
+    "stopButton": "No, Goal achieved",
+    "continueButton": "Yes, I want to continue"
+  },
+  "editNote": {
+    "title": "Edit Note",
+    "description": "Modify the emotion and note for this habit",
+    "moodPlaceholder": "Select your mood",
+    "notePlaceholder": "How did you feel while doing this habit? Leave a note to remember and understand your progress."
+  },
+  "editHabit": {
+    "title": "Edit Habit",
+    "description": "Add details",
+    "namePlaceholder": "Habit name",
+    "descriptionPlaceholder": "Habit description",
+    "noSpecificTime": "No specific time",
+    "selectDifficulty": "Select difficulty",
+    "timeObjectivePlaceholder": "Time objective (days)",
+    "saveChanges": "Save Changes"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "calendar": {
+    "title": "Monthly Calendar",
+    "description": "Visualize your monthly progress",
+    "weekDays": {
+      "monday": "MON",
+      "tuesday": "TUE",
+      "wednesday": "WED",
+      "thursday": "THU",
+      "friday": "FRI",
+      "saturday": "SAT",
+      "sunday": "SUN"
+    },
+    "months": {
+      "enero": "January",
+      "febrero": "February",
+      "marzo": "March",
+      "abril": "April",
+      "mayo": "May",
+      "junio": "June",
+      "julio": "July",
+      "agosto": "August",
+      "septiembre": "September",
+      "octubre": "October",
+      "noviembre": "November",
+      "diciembre": "December"
+    },
+    "week": "Week",
+    "weekShort": "W",
+    "monthsShort": {
+      "january": "Jan",
+      "february": "Feb",
+      "march": "Mar",
+      "april": "Apr",
+      "may": "May",
+      "june": "Jun",
+      "july": "Jul",
+      "august": "Aug",
+      "september": "Sep",
+      "october": "Oct",
+      "november": "Nov",
+      "december": "Dec"
+    },
+    "weekLetter": "W"
+  },
+  "status": {
+    "completed": "Completed",
+    "partial": "Partial",
+    "notCompleted": "Not completed"
+  },
+  "balance": {
+    "title": "Habits Balance",
+    "selectPeriod": "Select period",
+    "currentPeriod": "{{month}} {{year}}",
+    "periods": {
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "calculations": {
+      "common": {
+        "completed": "Completed day = 100%",
+        "notCompleted": "Not completed day = 0%",
+        "exampleTitle": "Example:"
+      },
+      "week": {
+        "title": "Weekly Calculation",
+        "description": "The percentage shown is an average of the 7 days of the week:",
+        "exampleScenario": "If you complete one day in the week:",
+        "exampleCalculation": "(100% + 0% + 0% + 0% + 0% + 0% + 0%) ÷ 7 days = 14.28%"
+      },
+      "month": {
+        "title": "Monthly Calculation",
+        "description": "The percentage shown is an average of all days in the month:",
+        "exampleScenario": "If you complete 3 days in a 30-day month:",
+        "exampleCalculation": "(3 × 100% + 27 × 0%) ÷ 30 days = 10%"
+      },
+      "year": {
+        "title": "Yearly Calculation",
+        "description": "Shows the monthly average of completion:",
+        "exampleScenario": "For a month with 15 completed days:",
+        "exampleCalculation": "(15 × 100% + 15 × 0%) ÷ 30 days = 50% for that month"
+      }
+    },
+    "habitsSummary": "Habits Summary",
+    "trendsSummary": "Trends Summary",
+    "yearViewNotAvailable": "Annual view is not available on mobile devices",
+    "useWeeklyOrMonthly": "Please use weekly or monthly view",
+    "viewProgressTrends": "View Progress Trends",
+    "detailedBalance": "Detailed Balance"
+  },
+  "annualPerformance": {
+    "srDescription": "Annual performance visualization for habit {{habitName}}",
+    "title": "Annual Performance: {{habitName}}",
+    "chartDescription": "This chart presents your habit completion performance year by year, making it easy to compare between periods:",
+    "selectYear": "Select year",
+    "chartPoints": {
+      "lineStyles": "Line styles (solid, dashed, dotted) help distinguish between years at a glance",
+      "comparison": "Compare current year's performance with previous years quickly",
+      "percentage": "The vertical axis shows completion percentage (0-100%) for each month"
+    }
+  },
+  "addReward": {
+    "title": "Add New Reward",
+    "description": "Complete the details to create a new reward",
+    "namePlaceholder": "Reward name",
+    "selectClassification": "Select classification",
+    "addButton": "Add Reward"
+  },
+  "medals": {
+    "bronze": "Bronze",
+    "silver": "Silver",
+    "gold": "Gold"
+  },
+  "addNote": {
+    "title": "Add Note",
+    "description": "Record your mood and add a note",
+    "moodPlaceholder": "Select your mood",
+    "notePlaceholder": "How did you feel while doing this habit? Leave a note to remember and understand your progress."
+  },
+  "emotions": {
+    "Me siento feliz": "I feel happy",
+    "Me siento orgulloso/a": "I feel proud",
+    "Me siento motivado/a": "I feel motivated",
+    "Me siento neutral": "I feel neutral",
+    "Me siento frustrado/a": "I feel frustrated",
+    "Me siento cansado/a": "I feel tired",
+    "Me siento ansioso/a": "I feel anxious"
+  },
+  "charts": {
+    "performancePattern": "Performance Graph",
+    "viewPieChart": "View Pie Chart",
+    "monthlyAverage": "Monthly Trend",
+    "yearlyTrend": "Annual Trend",
+    "month": "Month: {{month}}",
+    "completionPercentage": "Completion %",
+    "monthView": "Month View",
+    "yearView": "Year View",
+    "habitStatusDistribution": "Status Distribution",
+    "habitsProgress": {
+      "tooltip": {
+        "title": "Habits Progress Chart",
+        "description": "This chart shows your habits progress:",
+        "point1": "Bars represent completion percentage",
+        "point2": "Compare progress between different habits",
+        "point3": "Helps identify consistency patterns"
+      }
+    },
+    "annualProgress": {
+      "tooltip": {
+        "title": "Annual Habits Progress",
+        "description": "This chart shows your progress throughout the year:",
+        "point1": "Each line represents a different habit",
+        "point2": "Vertical axis shows completion percentage (0-100%)",
+        "point3": "Helps identify yearly trends and patterns",
+        "point4": "Compare performance between different habits"
+      }
+    },
+    "performance": "Performance",
+    "previousMonth": "Previous Month"
+  },
+  "addHabit": {
+    "description": "Add details"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "add": "Add Task",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe task details",
+    "priorityLabel": "Priority",
+    "selectPriority": "Select priority",
+    "dueDateLabel": "Date",
+    "empty": "No pending tasks",
+    "priorities": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "status": {
+      "completed": "Completed",
+      "pending": "Pending"
+    },
+    "showCompleted": "Show completed",
+    "postpone": "Postpone to tomorrow",
+    "delete": "Delete task",
+    "sortBy": "Sort by",
+    "sortByTime": "Time",
+    "sortByPriority": "Priority",
+    "statistics": {
+      "title": "Productivity Statistics",
+      "completed": "Completed Tasks: {{completed}}/{{total}}",
+      "rate": "Completion Rate: {{rate}}%"
+    },
+    "timeLabel": "Time",
+    "navigation": {
+      "previous": "Previous day",
+      "next": "Next day"
+    },
+    "noSpecificTime": "No specific time",
+    "timeType": "Time type",
+    "timeTypes": {
+      "none": "No specific time",
+      "range": "Time range"
+    },
+    "startTime": "Start time",
+    "endTime": "End time",
+    "selectTimeType": "Select time type",
+    "edit": "Edit task",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "labelLabel": "Label",
+    "selectLabel": "Select label",
+    "labels": {
+      "title": "Manage Labels",
+      "namePlaceholder": "Label name",
+      "addNew": "Add Label",
+      "compras": "Shopping",
+      "pendientes": "Pending",
+      "importante": "Important",
+      "urgente": "Urgent",
+      "otras": "Others",
+      "personal": "Personal",
+      "trabajo": "Work",
+      "estudios": "Studies",
+      "reuniones": "Meetings",
+      "finanzas": "Finance",
+      "casa": "Home",
+      "salud": "Health",
+      "proyectos": "Projects",
+      "desarrollo": "Personal Growth",
+      "creatividad": "Creativity"
+    },
+    "delete": {
+      "confirmTitle": "How do you want to delete this task?",
+      "description": "This task is scheduled to repeat on multiple days",
+      "deleteInstance": "Delete only for this day",
+      "deleteAll": "Delete task for all days"
+    },
+    "add": "Add Task",
+    "edit": "Edit Task",
+    "addDescription": "Configure the details of the new task",
+    "editDescription": "Modify the task details",
+    "selectDate": "Select date",
+    "createTask": "Create task",
+    "searchPlaceholder": "Search tasks...",
+    "filters": "Filters",
+    "showCompleted": "Show completed",
+    "sortBy": {
+      "label": "Sort by",
+      "title": "Select order",
+      "time": "Time",
+      "priority": "Priority"
+    },
+    "timeline": {
+      "title": "Day Schedule",
+      "selectView": "Select view",
+      "dayView": "Day schedule",
+      "monthView": "Monthly view",
+      "dayTitle": "Day Schedule",
+      "monthTitle": "Monthly View",
+      "date": "{{month}} {{day}}, {{year}}",
+      "monthYear": "{{month}} {{year}}",
+      "noTasks": "No tasks for this day",
+      "addTask": "Add task",
+      "header": {
+        "title": "Day Schedule",
+        "date": "{{month}} {{day}}, {{year}}"
+      }
+    },
+    "notePlaceholder": "Add a note to remember important details about this task...",
+    "recurring": {
+      "label": "Recurring task",
+      "description": "This task will repeat on selected dates",
+      "selectDates": "Select dates for the task",
+      "selectedDates": "{{count}} dates selected"
+    },
+    "timePicker": {
+      "selectTime": "SELECT TIME",
+      "invalidRange": "End time must be after start time"
+    },
+    "noTasksWithoutTime": "No tasks without specific time",
+    "withoutTime": {
+      "ariaLabel": "List of tasks without assigned time",
+      "tooltip": "View tasks without assigned time"
+    },
+    "priority": "Priority",
+    "time": "Time",
+    "label": "Label",
+    "note": "Note",
+    "priorities": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "deleteConfirmation": {
+      "title": "Delete task?",
+      "description": "Are you sure you want to delete this task? This action cannot be undone."
+    },
+    "complete": "Complete task",
+    "completed": "Task completed"
+  },
+  "timeline": {
+    "title": "Day Schedule",
+    "selectView": "Select view",
+    "dayView": "Day schedule",
+    "monthView": "Monthly view",
+    "dayTitle": "Day Schedule",
+    "monthTitle": "Monthly View",
+    "date": "{{month}} {{day}}, {{year}}"
+  },
+  "timePicker": {
+    "title": "SELECT TIME",
+    "selectTime": "Select time",
+    "invalidRange": "End time must be after start time"
+  },
+  "onboarding": {
+    "title": "Complete your profile",
+    "description": "To personalize your experience, we need some additional information",
+    "complete": "Complete profile"
+  },
+  "stats": {
+    "summary": "Statistical Summary",
+    "average": "Average",
+    "maximum": "Maximum",
+    "maxDate": "Max date",
+    "maxMonth": "Max month",
+    "trend": "Trend",
+    "improving": "Improving",
+    "declining": "Declining",
+    "stable": "Stable"
+  }
+}

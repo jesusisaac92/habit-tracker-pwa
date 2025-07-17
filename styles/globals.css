@@ -1,0 +1,1374 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+    * {
+      border-color: theme('colors.gray.200');
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Estilos para los gráficos de Recharts */
+.recharts-wrapper {
+  background-color: white !important;
+}
+
+.recharts-surface {
+  background-color: white !important;
+}
+
+.recharts-layer {
+  background-color: white !important;
+}
+
+.recharts-cartesian-grid-bg {
+  fill: white !important;
+}
+
+.dark .recharts-wrapper {
+  background-color: #1e293b !important; /* bg-gray-800 en dark mode */
+}
+
+.dark .recharts-surface {
+  background-color: #1e293b !important;
+}
+
+.dark .recharts-layer {
+  background-color: #1e293b !important;
+}
+
+.dark .recharts-cartesian-grid-bg {
+  fill: #1e293b !important;
+}
+
+.recharts-responsive-container {
+  background-color: white !important;
+}
+
+.dark .recharts-responsive-container {
+  background-color: #1e293b !important;
+}
+
+/* Asegurar que el contenedor del dialog tenga fondo sólido */
+[data-radix-dialog-content] {
+  background-color: white !important;
+}
+
+.dark [data-radix-dialog-content] {
+  background-color: #1e293b !important;
+}
+
+/* Asegurar que todos los elementos del diálogo HabitsProgressTrendDialog tengan fondo sólido */
+[data-radix-dialog-content] * {
+  background-color: inherit;
+}
+
+[data-radix-dialog-title] {
+  background-color: white !important;
+}
+
+.dark [data-radix-dialog-title] {
+  background-color: #1e293b !important;
+}
+
+[data-radix-dialog-description] {
+  background-color: white !important;
+}
+
+.dark [data-radix-dialog-description] {
+  background-color: #1e293b !important;
+}
+
+/* Asegurar que los encabezados del diálogo tengan fondo */
+.DialogHeader {
+  background-color: white !important;
+}
+
+.dark .DialogHeader {
+  background-color: #1e293b !important;
+}
+
+/* Contenido del diálogo */
+.DialogContent {
+  background-color: white !important;
+}
+
+.dark .DialogContent {
+  background-color: #1e293b !important;
+}
+
+.switch[data-state="checked"] {
+  justify-content: flex-end;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  border-radius: 9999px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.switch[data-state="checked"]::after {
+  transform: translateX(100%);
+}
+
+:root {
+  --switch-thumb-color: black;
+}
+
+.switch[data-state="checked"] {
+  background-color: white !important;
+}
+
+.switch[data-state="unchecked"] {
+  background-color: white !important;
+}
+
+.switch::before {
+  background-color: var(--switch-thumb-color) !important;
+}
+
+.switch {
+  position: relative;
+  width: 42px;
+  height: 25px;
+  border-radius: 34px;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  left: 2px;
+  bottom: 1px;
+  background-color: black;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch[data-state="checked"]::before {
+  transform: translateX(17px);
+  background-color: white;
+}
+
+.emotion-list {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.emotion-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.emotion-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.emotion-list::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.emotion-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.7);
+}
+
+.emotion-list::-webkit-scrollbar-button {
+  display: block;
+  height: 4px;
+  background-color: rgba(155, 155, 155, 0.3);
+  border-radius: 2px;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(203, 213, 225, 0.4);
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(203, 213, 225, 0.6);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.select-content {
+  z-index: 50;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: white !important;
+  border: 1px solid rgb(229 231 235) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
+}
+
+.select-item {
+  cursor: pointer !important;
+  padding: 0.5rem 1rem;
+}
+
+.select-item[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-item:hover {
+  background-color: rgb(243 244 246) !important;
+}
+
+.dark .select-item:hover {
+  background-color: rgb(55 65 81) !important;
+}
+
+/* Estilos para el calendario */
+.rdp {
+  --rdp-cell-size: 32px;
+  margin: 0;
+  background-color: white;
+  width: 280px;
+}
+
+.rdp-months {
+  padding: 0.5rem 1rem;
+}
+
+.rdp-month {
+  width: 100%;
+}
+
+.rdp-caption {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.rdp-caption_label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #4b5563;
+  text-transform: none !important;
+}
+
+.rdp-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rdp-nav_button {
+  color: #9ca3af;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rdp-head_cell {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #6b7280;
+  text-transform: lowercase;
+  padding-bottom: 0.75rem;
+}
+
+.rdp-cell {
+  padding: 2px;
+  text-align: center;
+}
+
+.rdp-day {
+  width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-radius: 50%;
+  transition: all 0.2s;
+  margin: 0;
+}
+
+.rdp-day_selected {
+  background-color: #2563eb;
+  color: white;
+  font-weight: normal;
+}
+
+.rdp-day_today {
+  font-weight: 500;
+}
+
+.rdp-day:hover:not(.rdp-day_selected) {
+  background-color: #f3f4f6;
+}
+
+.rdp-day_outside {
+  color: #d1d5db;
+}
+
+/* Modo oscuro */
+.dark .rdp {
+  background-color: #1f2937;
+}
+
+.dark .rdp-caption_label {
+  color: #e5e7eb;
+}
+
+.dark .rdp-head_cell {
+  color: #9ca3af;
+}
+
+.dark .rdp-day {
+  color: #e5e7eb;
+}
+
+.dark .rdp-day_outside {
+  color: #4b5563;
+}
+
+.dark .rdp-day_selected {
+  background-color: #3b82f6;
+}
+
+.dark .rdp-day:hover:not(.rdp-day_selected) {
+  background-color: #374151;
+}
+
+/* Estilos para React Calendar */
+.react-calendar {
+  width: 280px;
+  max-width: 100%;
+  background-color: white !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: inherit;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 12px 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: #374151;
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-transform: none !important;
+}
+
+.react-calendar__navigation button:enabled:hover {
+  background-color: #e5e7eb;
+}
+
+.react-calendar__navigation__label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1f2937;
+  text-transform: capitalize;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Estilos para los botones de navegación */
+.react-calendar__navigation__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 8px;
+}
+
+.react-calendar__month-view__days__day {
+  font-size: 0.875rem;
+  color: #374151;
+  padding: 8px;
+}
+
+.react-calendar__tile {
+  text-align: center;
+  background: none;
+  border-radius: 50%;
+  transition: all 0.2s;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #f3f4f6;
+}
+
+.react-calendar__tile--now {
+  background-color: #e6f3ff !important;
+  color: #000;
+  font-weight: 600;
+}
+
+.react-calendar__tile--now:hover {
+  background-color: #e6f3ff !important;
+}
+
+.react-calendar__tile--active,
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background-color: #ffd700 !important;
+  color: #000;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #d1d5db;
+}
+
+/* Estilos para el modo oscuro */
+.dark .react-calendar {
+  background-color: rgb(31 41 55) !important; /* bg-gray-800 */
+}
+
+.dark .react-calendar__navigation {
+  background-color: #1f2937;
+}
+
+.dark .react-calendar__navigation button,
+.dark .react-calendar__navigation__label {
+  color: #e5e7eb;
+  background: transparent;
+}
+
+.dark .react-calendar__navigation__label,
+.dark .react-calendar__navigation button {
+  color: #e5e7eb;
+}
+
+.dark .react-calendar__month-view__weekdays {
+  color: #9ca3af;
+}
+
+.dark .react-calendar__month-view__days__day {
+  color: #e5e7eb;
+}
+
+.dark .react-calendar__tile:enabled:hover {
+  background-color: #374151;
+}
+
+.dark .react-calendar__tile--now {
+  background-color: #e6f3ff !important;
+  color: #000;
+}
+
+.dark .react-calendar__tile--now:hover {
+  background-color: #e6f3ff !important;
+}
+
+.dark .react-calendar__tile--active,
+.dark .react-calendar__tile--active:enabled:hover,
+.dark .react-calendar__tile--active:enabled:focus {
+  background-color: #ffd700 !important;
+  color: #000;
+  opacity: 0.8;
+}
+
+.dark .react-calendar__month-view__days__day--neighboringMonth {
+  color: #6b7280;
+}
+
+/* Eliminar los puntos de los días de la semana */
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;  /* Esto elimina los puntos */
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* Para modo oscuro */
+.dark .react-calendar__month-view__weekdays__weekday abbr {
+  color: #9ca3af;
+}
+
+/* Quitar el fondo de los días deshabilitados */
+.react-calendar__tile:disabled,
+.react-calendar__tile--disabled {
+  background: none !important;  /* Quita el fondo gris */
+  opacity: 0.5;  /* Mantiene una opacidad para indicar que está deshabilitado */
+}
+
+/* Si quieres también ajustar el hover de los días deshabilitados */
+.react-calendar__tile:disabled:hover,
+.react-calendar__tile--disabled:hover {
+  background: none !important;
+  cursor: default;
+}
+
+/* Para los días del mes anterior/siguiente */
+.react-calendar__month-view__days__day--neighboringMonth {
+  background: none !important;
+  color: #d1d5db;
+}
+
+/* Estilos para la navegación en modo oscuro */
+.dark .react-calendar__navigation {
+  background-color: #1f2937; /* Color de fondo base */
+}
+
+.dark .react-calendar__navigation button {
+  background-color: #374151 !important; /* Color de fondo del botón */
+  color: #e5e7eb;
+}
+
+.dark .react-calendar__navigation button:hover {
+  background-color: #4b5563 !important; /* Color al hover */
+}
+
+.dark .react-calendar__navigation__label {
+  background-color: #374151 !important; /* Mismo color de fondo que el botón */
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* Eliminar completamente el borde del calendario */
+.react-calendar {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Asegurarnos que el contenedor del calendario tampoco tenga borde */
+.react-calendar__viewContainer,
+.react-calendar__month-view,
+.react-calendar__year-view,
+.react-calendar__decade-view,
+.react-calendar__century-view {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Para el modo oscuro */
+.dark .react-calendar {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Estilos específicos para el calendario en modo claro */
+.react-calendar {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Estilos para el contenedor del calendario */
+.react-calendar__viewContainer {
+  border: none !important;
+  background-color: white !important;
+}
+
+/* Estilos para el PopoverContent que contiene el calendario */
+.PopoverContent {
+  background-color: white !important;
+  border: none !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dark .PopoverContent {
+  background-color: #1f2937 !important;
+}
+
+/* Sobrescribir cualquier otro estilo que pueda estar causando el borde */
+[class*='react-calendar'] {
+  border: none !important;
+}
+
+/* Asegurarse de que el fondo sea transparente en el contenedor del calendario */
+.p-1 {
+  background-color: transparent !important;
+}
+
+.p-1.bg-transparent {
+  background-color: white !important;
+}
+
+.dark .p-1.bg-transparent {
+  background-color: #1f2937 !important;
+}
+
+/* Ajustar el PopoverContent para el calendario */
+.PopoverContent[data-state='open'] {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Asegurarse que el contenedor también tenga el fondo correcto */
+.react-calendar__viewContainer {
+  background-color: white !important;
+}
+
+.dark .react-calendar__viewContainer {
+  background-color: rgb(31 41 55) !important;
+}
+
+/* Estilos para el diálogo */
+.dialog-content {
+  background-color: hsl(var(--background) / 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+}
+
+/* Asegurar que el fondo sea sólido en modo claro y oscuro */
+.dialog-content {
+  background-color: white !important;
+}
+
+.dark .dialog-content {
+  background-color: rgb(31 41 55) !important; /* bg-gray-800 */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu-content {
+  background-color: white !important;
+  border: 1px solid rgb(229 231 235) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+.dark .dropdown-menu-content {
+  background-color: rgb(31 41 55) !important;
+  border-color: rgb(55 65 81) !important;
+}
+
+/* Estilos para el menú de selección */
+.select-content {
+  background-color: white !important;
+  border: 1px solid rgb(229 231 235) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
+  z-index: 50;
+}
+
+.dark .select-content {
+  background-color: rgb(31 41 55) !important;
+  border-color: rgb(55 65 81) !important;
+}
+
+[data-radix-popper-content-wrapper] {
+  background-color: white !important;
+}
+
+.dark [data-radix-popper-content-wrapper] {
+  background-color: rgb(31 41 55) !important;
+  
+}
+.selected-date {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 50% !important;
+}
+
+.selected-date:hover {
+  background-color: #2563eb !important;
+}
+
+/* Estilos para react-resizable */
+.react-resizable {
+  position: relative;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
+
+.select-scroll-indicator {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Estilos personalizados para el calendario */
+.react-calendar {
+  width: 350px;
+  max-width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.react-calendar__tile {
+  padding: 0.75em 0.5em;
+  border-radius: 4px;
+}
+
+.react-calendar__tile--now {
+  background: #FCD34D !important;
+  color: black;
+}
+
+.react-calendar__tile--active {
+  background: #3B82F6 !important;
+  color: white;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+/* Modo oscuro */
+.dark .react-calendar {
+  background: #1F2937;
+  color: white;
+}
+
+/* Añadir estos estilos para la vista de calendario mensual */
+.month-calendar-view .react-calendar__tile {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px;
+}
+
+.month-calendar-view .task-titles {
+  text-align: left;
+  overflow: hidden;
+}
+
+.month-calendar-view .react-calendar__tile--now {
+  background: rgba(252, 211, 77, 0.1) !important;
+}
+
+.month-calendar-view .react-calendar__tile--active {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.compact-calendar .react-calendar__tile {
+  height: 80px;
+  padding: 4px;
+}
+
+.month-calendar-view {
+  padding: 1rem;
+}
+
+.react-calendar__tile--now {
+  background-color: rgb(37 99 235) !important;
+  color: white !important;
+}
+
+.react-calendar__tile--now:hover {
+  background-color: rgb(29 78 216) !important;
+}
+
+/* Estilos específicos para el calendario en el horario del mes */
+.month-calendar-view .react-calendar__tile--active {
+  background: transparent !important;
+}
+
+.month-calendar-view .react-calendar__tile--now {
+  background: transparent !important;
+}
+
+.month-calendar-view .react-calendar__tile--now abbr {
+  color: black !important;
+  font-weight: 500;
+}
+
+.month-calendar-view .react-calendar__tile--now .task-count {
+  color: rgb(59 130 246) !important;
+}
+
+/* Modificar el estilo del día actual en el horario del mes */
+.month-calendar-view .react-calendar__tile--now {
+  background: rgb(30 58 138) !important; /* Azul oscuro */
+}
+
+.month-calendar-view .react-calendar__tile--now abbr {
+  color: white !important; /* Texto en blanco para contrastar con el fondo azul oscuro */
+  font-weight: 500;
+}
+
+.month-calendar-view .react-calendar__tile--now .task-count {
+  color: rgb(219 234 254) !important; /* Azul claro para el contador de tareas */
+}
+
+/* Solo cambiar el color del fondo */
+.month-calendar-view .react-calendar__tile--now {
+  background: rgb(59 130 246) !important; /* Un azul más brillante (blue-500) */
+}
+
+/* Estilos para el calendario del horario del mes */
+.month-calendar-view .react-calendar {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  border: none;
+  box-shadow: none;
+}
+
+.month-calendar-view .react-calendar__tile {
+  height: 100px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  position: relative;
+  background: white;
+}
+
+.month-calendar-view .react-calendar__month-view__weekdays__weekday {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  padding: 8px;
+  text-align: center;
+}
+
+.month-calendar-view .react-calendar__tile abbr {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+/* Estilo para el contador de tareas */
+.month-calendar-view .task-count {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Estilos para el calendario del horario del mes */
+.month-calendar-view .react-calendar {
+  width: 100%;
+  background: white;
+  border: none;
+  box-shadow: none;
+}
+
+.month-calendar-view .react-calendar__month-view {
+  padding: 0;
+}
+
+/* Estilo para los días de la semana */
+.month-calendar-view .react-calendar__month-view__weekdays__weekday {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #6b7280;
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Estilo para las celdas de los días */
+.month-calendar-view .react-calendar__tile {
+  height: 120px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  position: relative;
+  background: white;
+  border-radius: 0;
+}
+
+/* Estilo para los números de los días */
+.month-calendar-view .react-calendar__tile abbr {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Estilo para el día actual */
+.month-calendar-view .react-calendar__tile--now {
+  background: rgb(59 130 246) !important;
+}
+
+.month-calendar-view .react-calendar__tile--now abbr {
+  color: white !important;
+}
+
+/* Estilo para el contador de tareas */
+.month-calendar-view .task-count {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Estilo para el contador de tareas en el día actual */
+.month-calendar-view .react-calendar__tile--now .task-count {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Esta clase controla el texto del mes y año */
+.react-calendar__navigation__label__labelText {
+  text-transform: none !important; /* Quitar cualquier transformación de texto */
+}
+
+/* También podría estar afectado por estas clases */
+.rdp-caption_label {
+  text-transform: none !important;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.react-calendar__navigation button {
+  text-transform: none !important;
+}
+
+/* Asegurarnos que ninguna otra clase esté forzando mayúsculas */
+.react-calendar * {
+  text-transform: none !important;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 30px rgba(139,92,246,0.35);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(139,92,246,0.45);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(139,92,246,0.35);
+  }
+}
+
+.neon-button {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+.selected-date {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 0.375rem !important;
+}
+
+.selected-date:hover {
+  background-color: #2563eb !important;
+}
+
+/* Asegurarnos que el estilo se aplique incluso con otros selectores */
+.react-calendar__tile.selected-date {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+/* Estilos para el día actual en modo oscuro */
+.dark .react-calendar__tile--now {
+  background-color: #e6f3ff !important; /* Fondo claro */
+  color: black !important; /* Texto negro */
+}
+
+.dark .react-calendar__tile--now:hover {
+  background-color: #d1e9ff !important; /* Un tono ligeramente más oscuro al hacer hover */
+  color: black !important;
+}
+
+/* Asegurarse que el texto dentro del día actual también sea negro en modo oscuro */
+.dark .react-calendar__tile--now abbr {
+  color: black !important;
+}
+
+/* Para el calendario en vista mensual */
+.dark .month-calendar-view .react-calendar__tile--now {
+  background-color: #e6f3ff !important;
+}
+
+.dark .month-calendar-view .react-calendar__tile--now abbr {
+  color: black !important;
+}
+
+.mobile-select-content {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.mobile-select-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  padding: 8px;
+}
+
+.mobile-select-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.mobile-select-item:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Agregar esta regla al final del archivo */
+.timeline-item[data-has-label="false"] {
+  background-color: rgb(219 234 254) !important;
+  border-left: 4px solid #93c5fd !important;
+}
+
+.task-no-label {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+
+/* Añadir estos estilos a tu archivo CSS global */
+.day-timeline-dialog .dialog-corner-button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transition: all 0.2s ease;
+}
+
+.day-timeline-dialog .dialog-corner-button:hover {
+  background-color: transparent !important;
+  transform: none !important;
+}
+
+/* Asegurar que los diálogos tengan un fondo sólido */
+.day-timeline-dialog [data-radix-dialog-content] {
+  background-color: white !important;
+}
+
+.dark .day-timeline-dialog [data-radix-dialog-content] {
+  background-color: rgb(17 24 39) !important; /* bg-gray-900 */
+}
+
+/* Mejorar las etiquetas de hora en la línea de tiempo */
+.hour-labels-container {
+  min-width: 80px !important; /* Aumentar el ancho */
+  padding-right: 12px !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+
+.hour-label {
+  font-size: 0.85rem !important; /* Texto más grande */
+  color: #4b5563 !important; /* Color más oscuro para mejor legibilidad */
+  padding-left: 16px !important; /* Más espacio a la izquierda */
+  position: relative;
+  font-weight: 500 !important; /* Texto más grueso */
+}
+
+.hour-label span {
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+}
+
+.hour-label::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px !important; /* Línea más larga */
+  height: 1px;
+  background-color: #d1d5db !important;
+}
+
+.dark .hour-label {
+  color: #d1d5db !important;
+}
+
+.dark .hour-label::after {
+  background-color: #4b5563 !important;
+}
+
+/* Ocultar temporalmente las etiquetas de hora */
+.hour-labels-container {
+  display: none !important;
+}
+
+/* Ocultar las etiquetas de hora en la línea de tiempo */
+.timeline-grid .hour-label,
+.timeline-container .hour-label,
+.timeline-scroll-container .hour-label,
+[class*="hour-label"] {
+  display: none !important;
+}
+
+/* También podemos intentar con un selector más específico */
+.timeline-scroll-container [class*="hour"] {
+  display: none !important;
+}
+
+/* Mejorar la apariencia de las etiquetas de hora */
+.timeline-grid-hour-label {
+  font-size: 10px !important;
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.2px !important;
+}
+
+/* Añadir un fondo sutil para mejorar la legibilidad */
+.timeline-grid-hour-label span {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  padding: 1px 3px !important;
+  border-radius: 2px !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+.dark .timeline-grid-hour-label span {
+  background-color: rgba(17, 24, 39, 0.7) !important;
+}
+
+/* Asegurar que el botón de cierre sea clickeable */
+.dialog-corner-button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.dialog-corner-button:hover {
+  background-color: transparent !important;
+  transform: none !important;
+}
+
+.dialog-corner-button svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Evitar que otros elementos bloqueen el clic */
+.day-timeline-dialog [data-radix-dialog-content] > * {
+  pointer-events: auto;
+}
+
+/* Ajustar las etiquetas de hora para móvil */
+@media (max-width: 640px) {
+  .timeline-grid-hour-label {
+    font-size: 8px !important; /* Reducido de 9px a 8px */
+    padding-right: 0px !important; /* Eliminado el padding */
+    width: 18px !important; /* Reducido de 22px a 18px */
+    text-align: right !important;
+    position: absolute !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* Reducir al mínimo el espacio del contenedor de hora */
+  .timeline-grid .hour-container {
+    padding-left: 20px !important; /* Reducido de 24px a 20px */
+    position: relative !important;
+  }
+
+  /* Reducir al mínimo el padding del contenedor principal */
+  .timeline-scroll-container {
+    padding-left: 20px !important; /* Reducido de 24px a 20px */
+  }
+}
+
+/* Estilos para el spinner de carga */
+.spinner-dots {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Estilos para los botones de selección de período en las gráficas */
+.chart-period-button {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.chart-period-button[data-state="active"] {
+  background-color: black !important;
+  color: white !important;
+  border-color: black !important;
+}
+
+.dark .chart-period-button[data-state="active"] {
+  background-color: black !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.chart-period-button:hover {
+  transform: translateY(-1px);
+}
+
+.chart-period-button[data-state="active"]:hover {
+  background-color: #333333 !important;
+}
+
+/* Estilos para el título de la gráfica */
+[data-radix-dialog-title] {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  color: black !important;
+}
+
+.dark [data-radix-dialog-title] {
+  color: white !important;
+}
+
+.switch[data-state="checked"] {
+  justify-content: flex-end;
+}
