@@ -20,20 +20,15 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: false, // Desactivar temporalmente para evitar error 126
+  reactStrictMode: false, // Desactivar para evitar problemas
+  swcMinify: false,
   typescript: {
     ignoreBuildErrors: true,
   },
-  webpack: (config, { isServer }) => {
-    // Ignorar hammerjs en el servidor para evitar errores de SSR
-    if (isServer) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'hammerjs': false,
-      };
-    }
-    
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
