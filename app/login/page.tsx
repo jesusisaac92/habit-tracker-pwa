@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from 'react';
-import { useAuth } from '@/src/supabase/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useHabitStore } from '@/store/useHabitStore';
+import { supabase } from '@/src/supabase/config/client';
 
 const ENABLE_GOOGLE_AUTH = false;
 
@@ -13,7 +13,6 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const { signIn, signInWithGoogle, loading } = useAuth();
   const router = useRouter();
   const { initializeHabits } = useHabitStore();
 
@@ -22,30 +21,49 @@ export default function Login() {
     setError(null);
     
     try {
-      console.log('Attempting login...');
-      const { error, user } = await signIn(email, password);
+      console.log('Attempting direct Supabase login...');
       
-      console.log('Login response:', { error, user });
+      // Usar directamente Supabase en lugar del hook
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      
+      console.log('Supabase response:', { data, error });
       
       if (error) {
-        console.error('Login error:', error);
-        setError(typeof error === 'string' ? error : (error as any)?.message || 'Error de autenticación');
-      } else if (user) {
-        console.log('Login successful, user:', user.email);
-        // Forzar redirección con window.location para asegurar que funcione
-        window.location.href = '/dashboard';
+        console.error('Supabase login error:', error);
+        setError(error.message || 'Error de autenticación');
+      } else if (data?.user) {
+        console.log('Supabase login successful, user:', data.user.email);
+        console.log('Session:', data.session);
+        
+        // Guardar en localStorage para debugging
+        if (data.session) {
+          localStorage.setItem('supabase_session', JSON.stringify(data.session));
+        }
+        
+        // Esperar un momento y redirigir
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 1000);
       } else {
-        console.log('No user returned from signIn');
+        console.log('No user returned from Supabase');
         setError('No se pudo completar el login');
       }
     } catch (err) {
-      console.error('Error en login:', err);
+      console.error('Exception in login:', err);
       setError('Error al iniciar sesión');
     }
   };
 
   const handleGoogleSignIn = async () => {
-    const { error } = await signInWithGoogle();
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`
+      }
+    });
     if (error) {
       setError(error.message);
     }
@@ -100,10 +118,10 @@ export default function Login() {
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={false} // Loading state removed
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
           >
-            {loading ? 'Cargando...' : 'Iniciar sesión'}
+            Iniciar sesión
           </button>
         </form>
 
@@ -112,7 +130,7 @@ export default function Login() {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              disabled={loading}
+              disabled={false} // Loading state removed
               className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
