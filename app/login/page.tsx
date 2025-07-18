@@ -22,13 +22,21 @@ export default function Login() {
     setError(null);
     
     try {
-      const { error } = await signIn(email, password);
+      console.log('Attempting login...');
+      const { error, user } = await signIn(email, password);
+      
+      console.log('Login response:', { error, user });
       
       if (error) {
+        console.error('Login error:', error);
         setError(typeof error === 'string' ? error : (error as any)?.message || 'Error de autenticación');
-      } else {
+      } else if (user) {
+        console.log('Login successful, user:', user.email);
         // Forzar redirección con window.location para asegurar que funcione
         window.location.href = '/dashboard';
+      } else {
+        console.log('No user returned from signIn');
+        setError('No se pudo completar el login');
       }
     } catch (err) {
       console.error('Error en login:', err);

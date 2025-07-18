@@ -97,11 +97,17 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    // Solo redirigir si no hay usuario y no estamos cargando
-    if (!loading && !user) {
-      router.replace('/login');
+    // Verificación más simple de usuario
+    const checkAuth = async () => {
+      if (!loading && !user) {
+        console.log('No user found, redirecting to login...')
+        router.replace('/login');
+      } else if (user) {
+        console.log('User found:', user.email)
+      }
     }
-    // No hacer nada si el usuario está autenticado
+    
+    checkAuth()
   }, [user, loading, router]);
 
   useEffect(() => {
