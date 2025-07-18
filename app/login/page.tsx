@@ -17,32 +17,6 @@ export default function Login() {
   const router = useRouter();
   const { initializeHabits } = useHabitStore();
 
-  // Debug: Verificar variables de entorno
-  console.log('🔍 DEBUGGING - Environment variables:');
-  console.log('SUPABASE_URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
-  console.log('SUPABASE_KEY exists:', !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-  console.log('Supabase client initialized:', !!supabase);
-  
-  // Test de conexión
-  const testConnection = async () => {
-    try {
-      console.log('🔗 Testing Supabase connection...');
-      const { data, error } = await supabase.auth.getSession();
-      console.log('Session test result:', { data: !!data, error });
-      
-      // Test básico de conectividad
-      const { data: testData, error: testError } = await supabase.from('profiles').select('count').limit(1);
-      console.log('Database test:', { success: !testError, error: testError?.message });
-    } catch (err) {
-      console.error('Connection test failed:', err);
-    }
-  };
-  
-  // Ejecutar test al cargar
-  React.useEffect(() => {
-    testConnection();
-  }, []);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
