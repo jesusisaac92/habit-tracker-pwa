@@ -26,7 +26,8 @@ export default function Login() {
       if (error) {
         setError(error.message);
       } else {
-        router.push('/dashboard');
+        // Forzar redirección con window.location para asegurar que funcione
+        window.location.href = '/dashboard';
       }
     } catch (err) {
       console.error('Error en login:', err);

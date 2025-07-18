@@ -17,55 +17,23 @@ export function useAuth() {
 
     const checkUser = async () => {
       try {
-        const now = Date.now();
-        if (now - lastUserCheck.current < 5000) {
-          return;
-        }
-        
-        lastUserCheck.current = now;
-        
-        let cachedUser = null;
-        try {
-          const cachedSession = localStorage.getItem('supabase_auth_session');
-          if (cachedSession) {
-            const parsedSession = JSON.parse(cachedSession);
-            if (parsedSession?.user) {
-              cachedUser = parsedSession.user;
-            }
-          }
-        } catch (e) {
-          // Silent error handling
-        }
-        
-        if (cachedUser) {
-          setUser(cachedUser);
-          setLoading(false);
-          return;
-        }
-        
         const { data: { session } } = await supabase.auth.getSession()
         
         if (session?.user) {
+          setUser(session.user)
           try {
             localStorage.setItem('auth_user_cache', JSON.stringify(session.user));
           } catch (e) {
             // Silent error handling
           }
+        } else {
+          setUser(null)
         }
         
-        setUser(session?.user || null)
+        setLoading(false)
       } catch (error) {
-        try {
-          const cachedUser = localStorage.getItem('auth_user_cache');
-          if (cachedUser) {
-            setUser(JSON.parse(cachedUser));
-          } else {
-            setUser(null);
-          }
-        } catch (e) {
-          setUser(null);
-        }
-      } finally {
+        console.error('Error checking user:', error)
+        setUser(null)
         setLoading(false)
       }
     }
@@ -113,20 +81,32 @@ export function useAuth() {
 
   const signIn = async (email: string, password: string) => {
     setLoading(true)
-    const response = await authService.signIn(email, password)
     
-    if (response.data?.user) {
-      try {
-        localStorage.setItem('auth_user_cache', JSON.stringify(response.data.user));
-      } catch (e) {
-        // Silent error handling
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+      
+      if (error) {
+        setLoading(false)
+        return { user: null, error }
       }
-    }
-    
-    setLoading(false)
-    return { 
-      user: response.data?.user || null, 
-      error: response.error 
+      
+      if (data?.user) {
+        setUser(data.user)
+        try {
+          localStorage.setItem('auth_user_cache', JSON.stringify(data.user));
+        } catch (e) {
+          // Silent error handling
+        }
+      }
+      
+      setLoading(false)
+      return { user: data?.user || null, error: null }
+    } catch (error) {
+      setLoading(false)
+      return { user: null, error }
     }
   }
 
