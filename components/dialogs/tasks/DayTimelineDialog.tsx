@@ -16,7 +16,7 @@ import { DialogModals } from './components/DialogModals';
 import { motion, useAnimation, PanInfo } from 'framer-motion';
 import { addDays, subDays } from 'date-fns';
 import { MonthCalendarDialog } from './MonthCalendarDialog';
-import Hammer from 'hammerjs';
+// import Hammer from 'hammerjs'; // Temporalmente deshabilitado para deployment
 import { CurrentTimeLine } from './components/CurrentTimeLine';
 import { useTimelineItems } from '@/components/custom-hooks/useTimelineItems';
 import { useHabitStore } from '@/store/useHabitStore';
@@ -503,6 +503,9 @@ export const DayTimelineDialog = ({
 
   // Actualizar la configuración de Hammer y los manejadores de gestos
   useEffect(() => {
+    // Temporalmente deshabilitado para deployment
+    // TODO: Arreglar HammerJS para SSR
+    /*
     const container = scrollContainerRef.current;
     if (!container) return;
 
@@ -531,22 +534,18 @@ export const DayTimelineDialog = ({
       lastScale = 1;
     });
 
-    mc.on('pinchmove', (e) => {
-      const deltaScale = e.scale - lastScale;
-      lastScale = e.scale;
+    mc.on('pinchmove', (ev) => {
+      const scaleChange = ev.scale / lastScale;
+      lastScale = ev.scale;
       
-      requestAnimationFrame(() => {
-        handleZoom(deltaScale * 0.05); // Reduce sensitivity for smoother zooming
-      });
+      handleZoom(scaleChange);
     });
-
-    // Eliminar los listeners de scroll manual y pan
-    // Dejar que el scroll nativo funcione por sí solo
 
     return () => {
       mc.destroy();
     };
-  }, [handleZoom]);
+    */
+  }, []);
 
   // Agregar este efecto para limpiar completamente el estado cuando cambia la fecha
   useEffect(() => {

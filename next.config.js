@@ -26,6 +26,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   webpack: (config, { isServer }) => {
+    // Ignorar hammerjs en el servidor para evitar errores de SSR
+    if (isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'hammerjs': false,
+      };
+    }
+    
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
