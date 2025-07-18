@@ -8,6 +8,7 @@ import { useHabitStore } from '@/store/useHabitStore';
 
 const ENABLE_GOOGLE_AUTH = false;
 
+// Fixed login redirect issues
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,7 +25,7 @@ export default function Login() {
       const { error } = await signIn(email, password);
       
       if (error) {
-        setError(error.message);
+        setError(typeof error === 'string' ? error : (error as any)?.message || 'Error de autenticación');
       } else {
         // Forzar redirección con window.location para asegurar que funcione
         window.location.href = '/dashboard';

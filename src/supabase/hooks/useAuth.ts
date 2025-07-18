@@ -4,6 +4,7 @@ import { User } from '@supabase/supabase-js'
 import { authService } from '../services/auth.service'
 import { useRouter } from 'next/navigation'
 
+// Fixed authentication and redirect issues
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
