@@ -21,7 +21,7 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false, // Desactivar temporalmente para evitar error 126
   typescript: {
     ignoreBuildErrors: true,
   },
